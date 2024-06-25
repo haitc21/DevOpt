@@ -1,5 +1,5 @@
 # Cài đặt GitLab
-
+[Video hướng dẫn](https://www.youtube.com/watch?v=Q6C5CoUxMuQ&list=PLsvroIvFNP1KU8foUeCC-hbJbqnAggWL2&index=13)
 1. Lên gg search "gitlab ê package"
 2. Tìm phiên bản phù hợp hệ điều hành Distro/Version
 3. Chạy câu lệnh cài đặt, ở đây cài bản 17

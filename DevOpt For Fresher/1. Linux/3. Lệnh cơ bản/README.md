@@ -48,6 +48,8 @@ cp data1/data11 data
 cp -r data1/data11 data
 # copy file rồi đổi tên
 cp -r data1/data11/text.txt data/text2.txt
+# copy lên 1 server khác qua ssh
+cp data.txt haitc@192.168.19.110:/data
 ```
 
 - Xóa
