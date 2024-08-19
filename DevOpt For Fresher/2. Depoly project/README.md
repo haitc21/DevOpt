@@ -10,7 +10,7 @@
 - Mỗi project có thư mục riêng.
 - Không sử dụng user root để deploy.
 
-# Front-end
+# 1. Front-end
 
 - [Triển khai VueJs, React sử dụng 3 cách chạy: Trực tiếp bằng npm server, Nginx, chạy như 1 service](https://www.youtube.com/watch?v=uqNfJj6msjA&list=PLsvroIvFNP1KU8foUeCC-hbJbqnAggWL2&index=10)
 
@@ -18,7 +18,7 @@
 
 ``` sh
 # copy file
-cp todolist.zip haitc@192.168.19.110:/home/haitc
+scp todolist.zip haitc@192.168.19.110:/home/haitc
 # giải nén, tạo thư mục
 sudo -i
 apt install unzip
@@ -93,7 +93,7 @@ nginx -t
 # restart nginx
 systemctl restart nginx
 # tạo file config cho website
-vi config.d/todolist.conf
+vi conf.d/todolist.conf
 # nginx cũng có 1 user mặc định là www-data, để kiểm tra vào file
 vi /ect/nginx/nginx.conf
 # Để dự án chạy được trong nginx thì user www-data phải ở trong group todolist
@@ -141,3 +141,108 @@ nginx -f reload
 # Back-end
 
 - [Triển khai BE java, MariaDB (Mýql)](https://www.youtube.com/watch?v=qATtJZxSo7o&list=PLsvroIvFNP1KU8foUeCC-hbJbqnAggWL2&index=12)
+
+### Bước 1: Copy source lên server, tạo thư mục, tạo user, group, phân quyền
+
+``` sh
+# copy file
+scp ecommerce.zip haitc@192.168.19.110:/home
+```
+
+- Trên Server
+
+``` sh
+sudo -i
+# giải nén
+unzip ecommerce.zip
+# di chuyển vào thư mục projects
+mv ecommerce /projects
+# tạo user
+adduser ecommerce
+# Thay đổi quyền thư mục
+chown -R ecommerce ./projects/ecommerce
+# Thay đổi quyền
+chmod -R 750 ./projects/ecommerce
+# kiểm tra quyền
+ls -l ./projects
+```
+
+### Bước 2: Cài đặt môi trường (Java, Meven)
+
+- Vào file pom.xml để xem version Java cần cài đặt ví dụ cài java 17
+
+``` sh
+# Java
+apt install openjdk-17-jdk openjdk-17-jre
+java --version
+# Maven
+apt install maven
+mvn -v
+```
+
+- Vào file application.properties hoặc application.yml trong src/main/resource để xem cấu hình DB
+- Cài đặt Maria DB
+
+``` sh
+apt install mariadb-server
+# kiểm tra port: tất cả nơi nào thông đến server thì sẽ hiển thị 0.0.0.0
+# cần sửa config để public port 3306 của db
+netstat -tlpun
+# tặt db
+systemctl stop mariadb
+# sửa cấu hình
+ls ./etc/mysql/mariadb.conf.d/
+vi ./etc/mysql/mariadb.conf.d/50-server.cnf
+# Sửa bind-address thành 0.0.0.0 để mạng nội bộ có thể connect
+# khởi động lại db
+systemctl restart mariadb
+# kiểm tra lại
+netstat -tlpun
+```
+
+- đăng nhập db
+
+``` sh
+mysql -u root
+# xem db
+show databaws;
+# tạo db
+create database ecommerce;
+# tạo user trong db tên đăng nhập ecommerce mật khẩu 123456 (giống như trong file appsetting.properties)
+create user 'ecommerce-admin'@'%' identified by '123456';
+# gán quyền
+grant all privilageson ecommerce.* to 'ecommerce-admin'@'%';
+# lưu lại quyền
+flush privilages;
+```
+
+- Đăng nhập thử user bằng máy local
+
+``` sh
+mysql -h 192.168.19.110 -P 3306 -u ecommerce-admin -p 123456
+show database;
+use ecommerce;
+show tables;
+# chạy sql
+source /projects/ecommerce/init_db.sql;
+show tables;
+```
+
+- Sửa lại appsetting.properties
+
+### Bước 3: Build và run
+
+``` sh
+# đổi tài khoản sang tài khoản của dự án
+su ecommerce
+# cài đặt dependencies bỏ qua test, kết quả trong thư mục target
+mvn clean install -DskipTest=true
+# Run
+java -jar target/ecommerce.jar 
+# Chạy nền: không giữ terminal, sẽ ra 1 file nohup.out
+nohup java -jar target/ecommerce.jar  2>&1 &
+# tìm process
+ps -rf | grep ecommerce
+# Tắt tiến trình
+kill -9 <id process>
+```
