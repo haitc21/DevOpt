@@ -21,3 +21,7 @@ vim text.txt
   - "/" để tìm kiếm
   - Gõ ":x" để lưu
   - Gõ ":q!" để thoát và không lưu
+- gg di chuyển con trỏ đến dòng đầu tiên.
+- V bắt đầu chế độ Visual Line.
+-G di chuyển con trỏ đến dòng cuối cùng, chọn toàn bộ nội dung của tệp.
+- Sau khi chọn toàn bộ nội dung bằng lệnh ggVG, gõ d để xóa tất cả nội dung đã chọn.
