@@ -180,6 +180,53 @@ apt install maven
 mvn -v
 ```
 
+- Kiểm tra config java
+
+``` sh
+sudo update-alternatives --config java
+```
+
+- Mở file .bashrc
+
+``` sh
+nano ~/.bashrc
+```
+
+- Thêm
+
+```
+export JAVA_HOME=/usr/lib/jvm//usr/lib/jvm/java-1.21.0-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+```
+
+``` sg
+source ~/.bashrc
+```
+
+- [Cập nhật phiên bản mavenơ(https://phoenixnap.com/kb/install-maven-on-ubuntu)
+
+``` sh
+wget https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz -P /tmp
+sudo tar xf /tmp/apache-maven-3.9.9-bin.tar.gz -C /opt
+sudo ln -s /opt/apache-maven-3.9.9 /opt/maven
+sudo nano /etc/profile.d/maven.sh
+```
+
+- Thêm dòng
+
+```
+export JAVA_HOME=/usr/lib/jvm/java-1.21.0-openjdk-amd64
+export M2_HOME=/opt/maven
+export MAVEN_HOME=/opt/maven
+export PATH=${M2_HOME}/bin:${PATH}
+```
+
+``` sg
+sudo chmod +x /etc/profile.d/maven.sh
+source /etc/profile.d/maven.sh
+mvn -version
+```
+
 - Vào file application.properties hoặc application.yml trong src/main/resource để xem cấu hình DB
 - Cài đặt Maria DB
 
@@ -242,7 +289,7 @@ java -jar target/ecommerce.jar
 # Chạy nền: không giữ terminal, sẽ ra 1 file nohup.out
 nohup java -jar target/ecommerce.jar  2>&1 &
 # tìm process
-ps -rf | grep ecommerce
+ps -ef | grep ecommerce
 # Tắt tiến trình
 kill -9 <id process>
 ```

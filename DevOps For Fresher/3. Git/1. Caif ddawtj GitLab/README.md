@@ -24,7 +24,7 @@ sudo apt-get install gitlab-ee=17.3.0-ee.0
 - Sửa file host trên gitlab-server
 
 ``` sh
-sudo vim /etc/host
+sudo vi /etc/hosts
 ```
 
 ấn "i" để vào insert, nhập "192.168.1.121 gitlab.haitc.local"
@@ -53,4 +53,13 @@ gitlab-ctl reconfigure
 cat /etc/gitlab/initial_root_password
 ```
 
-4. Đổi mật khẩu root
+- Tắt đăng kí tài khoản
+![](./image/1.png)
+![](./image/2.png)
+- Đổi mật khẩu
+![](./image/3.png)
+![](./image/4.png)
+![](./image/5.png)
+- Đổi theme
+![](./image/6.png)
+![](./image/7.png)
