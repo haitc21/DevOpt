@@ -94,3 +94,46 @@ ip a
 # restart server
 reboot
 ```
+
+# Kiểm Tra và Cài Đặt systemd-resolved
+
+Khởi Động Dịch Vụ:
+
+``` sh
+sudo systemctl start systemd-resolved=
+```
+
+Kích Hoạt Dịch Vụ Để Tự Động Khởi Động:
+
+``` sh
+sudo systemctl enable systemd-resolved
+```
+
+ Kiểm Tra Lại
+Kiểm Tra Trạng Thái Dịch Vụ:
+
+``` sh
+systemctl status systemd-resolved
+```
+
+Xem Cấu Hình DNS:
+
+Sau khi dịch vụ đang hoạt động, kiểm tra lại cấu hình DNS:
+
+``` sh
+systemd-resolve --status
+```
+
+Cập Nhật Cấu Hình Mạng:
+
+``` sh
+sudo netplan apply
+```
+
+kiểm tra
+
+``` sh
+nslookup google.com
+ping google.com
+
+```
