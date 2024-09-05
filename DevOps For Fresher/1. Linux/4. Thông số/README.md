@@ -1,3 +1,9 @@
+- Phiên bản OS
+
+``` sh
+cat /etc/os-release
+```
+
 - Kiểm tra Ram
 
 ``` sh
