@@ -135,5 +135,4 @@ kiểm tra
 ``` sh
 nslookup google.com
 ping google.com
-
 ```
