@@ -173,19 +173,22 @@ ls -l ./projects
 
 ``` sh
 # Java
-apt install openjdk-21-jdk openjdk-21-jre
+apt install openjdk-21-jdk openjdk-21-jre -y
 java --version
 # Maven
-apt install maven
+apt install maven -y
 mvn -v
 ```
 
-- Kiểm tra config java
+- Kiểm tra config java: Có thể thay đổi phiên bản mặc định bằng cách ấn số thứ tự phiên bản muốn chọn
 
 ``` sh
 sudo update-alternatives --config java
 ```
 
+![](1.png)
+
+<!-- 
 - Mở file .bashrc
 
 ``` sh
@@ -201,9 +204,9 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 ``` sg
 source ~/.bashrc
-```
+``` -->
 
-- [Cập nhật phiên bản mavenơ(https://phoenixnap.com/kb/install-maven-on-ubuntu)
+- [Cập nhật phiên bản maven](https://phoenixnap.com/kb/install-maven-on-ubuntu)
 
 ``` sh
 wget https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz -P /tmp
@@ -215,13 +218,13 @@ sudo nano /etc/profile.d/maven.sh
 - Thêm dòng
 
 ```
-export JAVA_HOME=/usr/lib/jvm/java-1.21.0-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 export M2_HOME=/opt/maven
 export MAVEN_HOME=/opt/maven
 export PATH=${M2_HOME}/bin:${PATH}
 ```
 
-``` sg
+``` sh
 sudo chmod +x /etc/profile.d/maven.sh
 source /etc/profile.d/maven.sh
 mvn -version
