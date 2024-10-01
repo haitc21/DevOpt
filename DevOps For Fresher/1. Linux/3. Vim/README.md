@@ -18,7 +18,7 @@ vim text.txt
   - "u" giống Ctrl+z
   - Ấn "dd" để xóa xòng
   - "yy" để copy dòng hiện tại, "pp" để paste
-  - "/" để tìm kiếm
+  - "/" để tìm kiếm, n để đến kết quả tiếp, N để quay lại, Enter để chuyển con trỏ đến kết quả
   - Gõ ":x" để lưu
   - Gõ ":q!" để thoát và không lưu
 - gg di chuyển con trỏ đến dòng đầu tiên.

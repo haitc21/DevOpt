@@ -136,3 +136,9 @@ kiểm tra
 nslookup google.com
 ping google.com
 ```
+
+- Cho phép ssh bằng root: Mở file /etc/ssh/sshd_cònig sửa PermitRootLogin thành yes
+
+``` sh
+sudo vi /etc/ssh/sshd_cònig
+```
