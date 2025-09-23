@@ -1,3 +1,6 @@
 *.zip
 *.iso
 *.exe
+**/bin/
+**/obj/
+**/dist/
