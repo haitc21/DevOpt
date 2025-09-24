@@ -35,7 +35,7 @@ deluser haitc1
 - tạo group
 
 ``` sh
-groupadd devopt1
+groupadd devops
 ```
 
 - Xóa group
@@ -61,7 +61,7 @@ groups haitc2
 - Xóa user khỏi group
 
 ``` sh
-deluser haitc2 devopt1
+deluser haitc2 devops
 ```
 
 ## 2, Quyền
@@ -80,7 +80,7 @@ ls -l
   - R: Dể thêm cả các thư mục, file con.
 
 ``` sh
-chown -R root:devopt1 data
+chown -R root:devops data
 ```
 
 - Quyền truy cập
