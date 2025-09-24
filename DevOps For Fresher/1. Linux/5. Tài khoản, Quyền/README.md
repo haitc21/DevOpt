@@ -74,7 +74,7 @@ ls -l
 # drwxr-xr-x 2 root root 4096 Jun 21 09:26 data
 ```
 
-Ở đây roor đầu tiên là chủ sở hữu, oor thứ 2 là nhóm sở hữu.
+Ở đây root đầu tiên là chủ sở hữu, root thứ 2 là nhóm sở hữu.
 
 - Chuyển chủ sở hữu, nhóm sở hữu
   - R: Dể thêm cả các thư mục, file con.
@@ -99,7 +99,7 @@ chown -R root:devopt1 data
 ``` sh
 # Thêm quyền đọc w ở thư mục data cho nhóm sở hữu
 chmod g=rwx data/
-Chỉnh sửa nhiều quyền 1 lúc: u cho full, g cho r và other không cho làm gì
+# Chỉnh sửa nhiều quyền 1 lúc: u cho full, g cho r và other không cho làm gì
 chmod u=rwx,g=r,o=- data/
 ```
 
