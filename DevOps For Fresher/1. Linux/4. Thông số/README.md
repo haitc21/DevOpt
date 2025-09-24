@@ -35,9 +35,8 @@ sudo reboot
 ```
 
 - Luôn thực hiện câu lệnh ở quyền Root
-`` sh
+``` sh
 sudo -i
-
 ```
 
 - Thông tin kết nối
