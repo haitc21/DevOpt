@@ -50,10 +50,10 @@ docker pull ubuntu:oracular-20240811.1
 ```
 
 - Chạy image tạo container
-  - --name: đặt tên
+  - --name: Tên container
   - -it: Truy cập luôn vào container
   - -d: chạy ẩn
-  - -p: cấu hình port vó dik map cổng 8888 của máy với 80 của container thì -p 8888:80
+  - -p: cấu hình port <pport máy chạy docker>:<port trong container> VD: map cổng 8888 của máy với 80 của container thì -p 8888:80
 
 ``` sh
 docker un --name ubuntu -it ubuntu:oracular-20240811.1
@@ -65,7 +65,7 @@ docker un --name ubuntu -it ubuntu:oracular-20240811.1
 # các container đang chạy
 docker ps
 # toàn bộ container
-docker ps
+docker ps -a
 ```
 
 - Khởi động container
@@ -74,13 +74,13 @@ docker ps
 docker start ubuntu
 ```
 
-- Truy cập vào docker đang chạy
+- Truy cập vào docker đang chạy: docker exec -it <container_id_or_name> <lệnh cần chạy>
 
 ``` sh
 docker exec -it ubuntu bash
 ```
 
-- Xóa container
+- Xóa container: docker rm -f <container_id_or_name>
 
 ``` sh
 docker rm -f ubuntu
@@ -88,8 +88,11 @@ docker rm -f ubuntu
 docker rm -f $(docker ps -a)
 ```
 
-- Xóa docker image
+- Xóa docker image: docker rmi <image_id_or_name>
 
 ``` sh
 docker rmi ubuntu:oracular-20240811.1
 ```
+- docker image prune: xóa tất cả image dangling (không còn tag hoặc không còn container nào dùng).
+- docker image prune -a: xóa luôn tất cả image không được container nào dùng, kể cả có tag.
+- docker system prune: dọn rộng hơn – xóa container đã dừng, network không dùng, dangling images và có thể cả volume (nếu thêm --volumes).
