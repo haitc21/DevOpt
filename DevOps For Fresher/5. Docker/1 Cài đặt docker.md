@@ -1,10 +1,9 @@
-1. Cài đặt docker
-
+# 1. Cài đặt docker
 
 ``` sh
 mkdir -p /tools/docker
 cd /tools/docker
-sudo nano install-docker.sh
+vi nano install-docker.sh
 ```
 
 - Nội dung file install-docker.sh
@@ -20,8 +19,6 @@ sudo systemctl start docker
 sudo systemctl enable docker
 sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
-docker -v
-docker-compose -v
 ```
 
 - Chạy file install-docker.sh
@@ -37,7 +34,7 @@ docker --version
 docker-compose --version
 ```
 
-2. Các lệnh cơ bản
+# 2. Các lệnh cơ bản
 
 - Truy cập [hub docker](https://hub.docker.com/) để tìm image
 - Pull image về máy
@@ -93,6 +90,7 @@ docker rm -f $(docker ps -a)
 ``` sh
 docker rmi ubuntu:oracular-20240811.1
 ```
+
 - docker image prune: xóa tất cả image dangling (không còn tag hoặc không còn container nào dùng).
 - docker image prune -a: xóa luôn tất cả image không được container nào dùng, kể cả có tag.
 - docker system prune: dọn rộng hơn – xóa container đã dừng, network không dùng, dangling images và có thể cả volume (nếu thêm --volumes).
