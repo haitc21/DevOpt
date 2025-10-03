@@ -4,22 +4,20 @@
 
 ### 1.1 Giới thiệu
 
-- Pod là đơn vị nhỏ nhất có thể triển khai và quản lý trong Kubernetes.
-- Một Pod là nhóm một hoặc nhiều container, chia sẻ storage và network resources, cùng với specification để chạy containers.
-- Pod là một application-specific "logical host", chứa containers tương đối tightly coupled.
+- Pod là đơn vị nhỏ nhất có thể triển khai và quản lý trong Kubernetes
 - Pod có thể chứa init containers (chạy khi Pod khởi động) và ephemeral containers (dùng để debug).
 - Pod context bao gồm Linux namespaces, cgroups và các cơ chế isolation khác, tương tự như container.
 
-Có hai cách dùng chính của Pod:
+- Có hai cách dùng chính của Pod:
 
-1. Pod chạy một container duy nhất (phổ biến nhất, Pod như wrapper cho container).
-2. Pod chạy nhiều container cần phối hợp, chia sẻ tài nguyên (advanced use case).
+  - 1. Pod chạy một container duy nhất (phổ biến nhất, Pod như wrapper cho container).
+  - 2. Pod chạy nhiều container cần phối hợp, chia sẻ tài nguyên (advanced use case).
 
-### 1.2 Workload resources quản lý Pods
+### 1.2 Workload resources - quản lý Pods
 
 - Thường không tạo Pod trực tiếp, kể cả singleton Pod. Thay vào đó dùng workload resources như Deployment, Job, StatefulSet.
-- Mỗi Pod chạy một instance của ứng dụng. Để scale theo chiều ngang → tạo nhiều Pod (replica).
-- Workload resources và controllers quản lý replication, rollout, auto-healing.
+- Mỗi Pod chạy một instance của ứng dụng. Để Horizontal scale (chiều ngang) → tạo nhiều Pod (replica).
+- Workload resources và controllers quản lý replication, rollout (rình triển khai phiên bản mới của ứng), auto-healing (tự động phục hồi khi có lỗi ).
 
 ### 1.3 Làm việc với Pods
 
@@ -29,7 +27,7 @@ Có hai cách dùng chính của Pod:
   - Pod object bị xóa
   - Pod bị evicted do thiếu resource
   - Node fails
-  → (nghĩa là Pod không được migrate sang node khác, thay vào đó controller sẽ tạo Pod mới).
+    → (nghĩa là Pod không được migrate sang node khác, thay vào đó controller sẽ tạo Pod mới).
 - Restart container ≠ Restart Pod (Pod là environment, không phải process).
 
 ### 1.4 Pod OS
@@ -64,8 +62,7 @@ Có hai cách dùng chính của Pod:
 ### 1.7 Pod generation
 
 - `metadata.generation` tăng mỗi khi spec thay đổi.
-- `status.observedGeneration` phản ánh generation hiện tại mà kubelet quan sát.
-- Tóm gọn: generation = lần thay đổi spec; observedGeneration = generation mà status hiện tại phản ánh.
+- `status.observedGeneration` phản ánh generation hiện tại mà kubelet giám sát.
 
 ### 1.8 Resource sharing và communication
 
@@ -87,8 +84,8 @@ Có hai cách dùng chính của Pod:
   - Drop Linux capabilities (tắt bớt quyền trong kernel để giảm rủi ro bảo mật).
   - Chạy non-root user hoặc với user/group ID cụ thể.
   - Thiết lập seccomp profile (lọc system calls).
-  - Cấu hình security cho Windows (ví dụ HostProcess).  
-- ⚠️ `privileged mode` (container có toàn quyền như root host) chỉ dùng khi bắt buộc.
+  - Cấu hình security cho Windows (ví dụ HostProcess).
+    > ⚠️ `privileged mode` (container có toàn quyền như root host) chỉ dùng khi bắt buộc.
 
 ### 1.10 Static Pods
 
@@ -114,3 +111,34 @@ Có hai cách dùng chính của Pod:
   - ExecAction: chạy lệnh trong container.
   - TCPSocketAction: kiểm tra TCP socket.
   - HTTPGetAction: gửi HTTP GET.
+
+# 2. Ví dụ triển khai tực tiếp Pod (chỉ để test ít sử dụng)
+
+- Tạo file pod.yml
+
+```sh
+mkdir -p /projects/car-serv && cd /projects/car-serv
+vi pod.yml
+```
+
+- Nội dung file pod.yml
+
+```yml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: car-serv
+  namespace: car-serv
+spec:
+  containers:
+    - name: car-serv
+      image: elroydevops/car-serv
+      ports:
+        - containerPort: 80
+```
+
+- Tạo pod
+
+```sh
+kubectl apply -f pod.yml
+```
