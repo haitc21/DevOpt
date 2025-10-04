@@ -21,12 +21,18 @@
   - Container name: car-serv
   - Image: docker.io/elroydevops/car-serv:latest
   - Add Pod: tcp, 80, TCP
+
 ![](./images/1.png)
+
 - Nhấn Create và chờ. Kết quả:
+
 ![](./images/2.png)
+
 - Tạo được 3 pod trên 2 worker là sv2 và sv3. Địa chỉ Ip này chỉ là Internal IP để các Pod kết nối nội bộ.
 - Nhấn vào dấu ... ở dòng car-serv-deployment chọn **Download YAML**
+
 ![](./images/3.png)
+
 - Mờ file [car-serv-deployment.yaml](./car-serv-deployment.yaml) chỉnh sửa:
   - Trong metadata xóa:
     - metadata:
@@ -87,6 +93,9 @@ spec:
 ```
 
 - Bây giờ có thể xóa deployment vừa rồi và import fiel yml trên vào vẫn sẽ ra kết quả như ban đầu
+
 ![](./images/4.png)
+
 ![](./images/5.png)
+
 ![](./images/6.png)
