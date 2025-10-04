@@ -117,11 +117,31 @@
 - Tạo file pod.yml
 
 ```sh
-mkdir -p /projects/car-serv && cd /projects/car-serv
-vi pod.yml
+mkdir -p ~/projects/car-serv && cd ~/projects/car-serv
 ```
 
-- Nội dung file pod.yml
+- Tạo namespace
+
+```sh
+vi ns.yml
+```
+
+```yml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: car-serv
+```
+
+```sh
+kubectl apply -f ns.yml
+```
+
+- pod.yml
+
+```sh
+vi pod.yml
+```
 
 ```yml
 apiVersion: v1
@@ -137,8 +157,18 @@ spec:
         - containerPort: 80
 ```
 
-- Tạo pod
-
 ```sh
 kubectl apply -f pod.yml
+```
+
+- Kiểm tra
+
+```sh
+kubectl get po -n car-serv
+```
+
+- Truy cập vào pod: Trong pod là container nên exec cũng tương tự docker
+
+```sh
+kubectl exec -it car-serv -n car-serv -- /bin/bash
 ```
