@@ -1,6 +1,7 @@
 # 1. Giới thiệu
 
 - Terraform là công cụ mã nguồn mở do HashiCorp phát triển.
+- Ngôn ngữ trong teraform là ![HashiCorp's configuration language](https://developer.hashicorp.com/terraform/language) - HCL.
 - Terraform tạo và quản lý các resource trên cloud dựa trên các API của n provider đó.
 
 ![](https://web-unified-docs-hashicorp.vercel.app/api/assets/terraform/latest/img/docs/intro-terraform-apis.png)
@@ -57,6 +58,6 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 - Cài đặt TFLint
 
 ```ps1
-choco install tflint[]
+choco install tflint
 tflint --version 
 ```
