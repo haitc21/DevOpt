@@ -1,4 +1,4 @@
-# Terraform Get Started.md
+# Terraform Get Started
 
 Hướng dẫn này qua việc sử dụng Terraform để tạo máy ảo EC@ trên AWS sẽ giưới thiệu các khái niệm cơ bản vể Terraform
 
