@@ -212,8 +212,8 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 24$
-      maxUnavailable: 24$
+      maxSurge: 25%
+      maxUnavailable: 25%
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -225,7 +225,7 @@ spec:
       namespace: car-serv
     spec:
       containers:
-        - image: docker.io/nginx
+        - image: docker.io/elroydevops/car-serv
           imagePullPolicy: Always
           name: car-serv
           ports:
