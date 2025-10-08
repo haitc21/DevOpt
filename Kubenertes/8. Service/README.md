@@ -28,4 +28,5 @@
 ## 2. Cluster IP
 
 - Cách tạo tương tự với Node Port ở phần 1 chỉ khác kiểu
-- Khi tạo xong 
+- Khi tạo xong chỉ có thể truy cập nội bộ cluster
+- Cần thêm **Ingress** ở bài sau.
