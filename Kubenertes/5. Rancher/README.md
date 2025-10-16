@@ -2,7 +2,29 @@
 
  Rancher là 1 công cụ mã nguồn mở, chạy nền web, hỗ trợ triển khai và quản lý nhiều cụm kubernetes cả trên on-prem và cloud
 
-## 1. Cài đặt rancher
+## 1. Tạo server
+
+- tạo máy ảo sv4 với ip: 192.168.159.104
+- **Tạo hard disk lưu dữ liệu rancher**: VMware => VM Settings => Add => Hard Disk
+- truy cập sv4 kiểm tra xem hard disk đã nhận chưa
+
+```sh
+lsblk
+```
+
+- Có dòng `sdb                         8:16   0   10G  0 disk` là ok.
+
+- Gán disk (ổ cứng) vào trong thư mục /data
+
+``` sh
+sudo mkfs.ext4 -m 0 /dev/sdb
+mkdir /data
+echo "/dev/sdb  /data  ext4  defaults  0  0" | sudo tee -a /etc/fstab
+mount -a
+sudo df -h
+```
+
+## 2. Cài đặt rancher
 
 Có thể cài đặt rancher qua Docker hoặc k8s. Ở đây để đơn giản sẽ cài đặt qua Docker
 
