@@ -48,6 +48,7 @@
     - template:
       - metadata:
         - creationTimestamp
+        - Thêm labels.app: car-serv-deployment
     - spec:
       - containers:
         - resources
@@ -80,6 +81,7 @@ spec:
   template:
     metadata:
       labels:
+        app: car-serv-deployment
         workload.user.cattle.io/workloadselector: apps.deployment-car-serv-car-serv-deployment
       namespace: car-serv
     spec:
@@ -172,6 +174,7 @@ spec:
   template:
     metadata:
       labels:
+        app: car-serv-deployment
         workload.user.cattle.io/workloadselector: apps.deployment-car-serv-car-serv-deployment
       namespace: car-serv
     spec:
@@ -221,6 +224,7 @@ spec:
   template:
     metadata:
       labels:
+        app: car-serv-deployment
         workload.user.cattle.io/workloadselector: apps.deployment-car-serv-car-serv-deployment
       namespace: car-serv
     spec:

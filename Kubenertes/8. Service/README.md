@@ -12,7 +12,7 @@
 
 - Kết nối trực tiếp đến Pod.
 - Chỉ sử dụng được các port trong khoảng **30000 - 32767**
-- Trên Rancher => Service Discovery => Services => NodePort
+- Trên Rancher => Service Discovery => Services => Create => NodePort
 - Namespace: car-serve
 - Name: car-serv-service
 - Trong phần **Service Ports**:
@@ -29,4 +29,8 @@
 
 - Cách tạo tương tự với Node Port ở phần 1 chỉ khác kiểu
 - Khi tạo xong chỉ có thể truy cập nội bộ cluster
-- Cần thêm **Ingress** ở bài sau.
+- Tạo service Cluster IP có tên **car-serv1-service** Cần thêm **Ingress** ở bài sau.
+
+![](./images/1.png)
+
+![](./images/2.png)
