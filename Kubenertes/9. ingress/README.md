@@ -184,3 +184,88 @@ spec:
 ~[](./images/2.png)
 - Add host vào mays `192.168.159.105 car-serv-onpre.devopseduvn.vn`
 - [car-serv-onpre.devopseduvn.vn](http://car-serv-onpre.devopseduvn.vn/)
+
+```sh
+kubectl get ingress -n car-serv
+```
+
+## 3. Tổng kết
+
+Có thể triển khai toàn bộ tài nguyên của car-serv bao gồm `deployment`, `service Cluster IP` và `ingress` bằng file yml sau:
+
+```yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: car-serv
+  name: car-serv-deployment
+  namespace: car-serv
+spec:
+  replicas: 2
+  revisionHistoryLimit: 11
+  selector:
+    matchLabels:
+      app: car-serv
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: car-serv
+      namespace: car-serv
+    spec:
+      containers:
+        - image: elroydevops/car-serv
+          imagePullPolicy: Always
+          name: car-serv
+          ports:
+            - containerPort: 80
+              name: tcp
+              protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: car-serv-service
+  namespace: car-serv
+spec:
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+    - name: tcp
+      port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: car-serv
+  sessionAffinity: None
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: car-serv-ingress
+  namespace: car-serv
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: car-serv-onpre.devopsedu.vn
+      http:
+        paths:
+          - backend:
+              service:
+                name: car-serv-service
+                port:
+                  number: 80
+            path: /
+            pathType: Prefix
+```
+
+- Trong yml có thể ngăn cách các phần bằng `---`.
+- Nên đặt **label**, **selector** là **tên dự án** như ở trên là `carr-serv`.

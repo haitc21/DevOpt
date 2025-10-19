@@ -77,12 +77,11 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      workload.user.cattle.io/workloadselector: apps.deployment-car-serv-car-serv-deployment
+      app: car-serv-deployment
   template:
     metadata:
       labels:
         app: car-serv-deployment
-        workload.user.cattle.io/workloadselector: apps.deployment-car-serv-car-serv-deployment
       namespace: car-serv
     spec:
       containers:
@@ -170,12 +169,11 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      workload.user.cattle.io/workloadselector: apps.deployment-car-serv-car-serv-deployment
+      app: car-serv-deployment
   template:
     metadata:
       labels:
         app: car-serv-deployment
-        workload.user.cattle.io/workloadselector: apps.deployment-car-serv-car-serv-deployment
       namespace: car-serv
     spec:
       containers:
@@ -220,12 +218,11 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      workload.user.cattle.io/workloadselector: apps.deployment-car-serv-car-serv-deployment
+      app: car-serv-deployment
   template:
     metadata:
       labels:
         app: car-serv-deployment
-        workload.user.cattle.io/workloadselector: apps.deployment-car-serv-car-serv-deployment
       namespace: car-serv
     spec:
       containers:
