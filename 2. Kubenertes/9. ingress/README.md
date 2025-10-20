@@ -18,7 +18,7 @@
 Helm là công cụ quản lý package danh cho k8s (tương tự như apt trong Ubuntu)
 Cài đặt helm trên **sv1**:
 
-````sh
+```sh
 wget https://get.helm.sh/helm-v3.16.2-linux-amd64.tar.gz
 tar xvf helm-v3.16.2-linux-amd64.tar.gz
 sudo mv linux-amd64/helm /usr/bin/
@@ -31,7 +31,7 @@ helm version
 
 Cài đặt [Ingress NGINX Controller](https://github.com/kubernetes/ingress-nginx) bằng helm
 
-````sh
+```sh
 # Cú pháp `helm repo add <tên-repo> <đường dẫn đến repo>`
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 # `1helm repo update` giống như apt update.
@@ -51,7 +51,7 @@ vi ingress-nginx/values.yaml
 
 >Tip: Tìm kiềm trong vim là `/<từ khóa>`, và ở bài trước khi NodePort sẽ ở port **30000 - 32767**.
 
-````sh
+```sh
 # tạo namespace 
 kubectl create ns ingress-nginx
 # Cú pháp install: helm -n <namespace> install <release name> -f <đường dẫn đến value.yml> <helm chart>
@@ -105,7 +105,7 @@ type: kubernetes.io/tls
 
 - Thêm server **sv5** 192.168.159.105
 
-````sh
+```sh
 # Cài đặt nginx
  sudo apt update -y
  sudo apt install nginx -y
@@ -140,7 +140,7 @@ server {
 
 - Ở trên server là địa chỉ ip của sv1,sv2,sv3 còn port là 30080 là cấu hình ingress-nginx ở phần 2.listen 80 thì để host không cần đến port và đã đổi port trang default của nginx ở trước khác 80
 
-````sh
+```sh
 # kiểm tra
 sudo nginx -t
 # Restart nginx
@@ -185,7 +185,7 @@ spec:
 - Add host vào mays `192.168.159.105 car-serv-onpre.devopseduvn.vn`
 - [car-serv-onpre.devopseduvn.vn](http://car-serv-onpre.devopseduvn.vn/)
 
-````sh
+```sh
 kubectl get ingress -n car-serv
 ```
 

@@ -8,7 +8,7 @@
 - **Tạo hard disk lưu dữ liệu rancher**: VMware => VM Settings => Add => Hard Disk
 - truy cập sv4 kiểm tra xem hard disk đã nhận chưa
 
-````sh
+```sh
 lsblk
 ```
 
@@ -35,7 +35,7 @@ Có thể cài đặt rancher qua Docker hoặc k8s. Ở đây để đơn giả
 
 >Note: Cần kiểm tra phiên bản rancher có tương thích với phiên bản k8s hiện tại không bằng cách tìm **rancher version metrix**. Ví dụ ở bài trước k8s được cài là phiên bản 1.30.14 (ở sv1 chạy kubectl get no thì sẽ hiện cột VERSION) thì ở đây cài rancher v2.9.2
 
-````sh
+```sh
 mkdir -p /data/rancher
 cd /data/rancher/
 vi docker-compose.yml
@@ -60,14 +60,14 @@ services:
 
 - Khởi chạy rancher
 
-````sh
+```sh
 docker-compose up -d
 ```
 
 - Truy cập vào [reancher](https://rancher.local)
 - Lấy mật khẩu user **admin**
 
-````sh
+```sh
 docker logs rancher-server 2>&1 | grep "Bootstrap Password:"
 ```
 
@@ -81,6 +81,6 @@ docker logs rancher-server 2>&1 | grep "Bootstrap Password:"
 - Create
 - Vì rancher dùng SSL/TLS tự ký nên sẽ kết nổi bằng lệnh ở dòng **If you get a "certificate signed by unknown authority" error, your Rancher installation has a self-signed or untrusted SSL certificate. Run the command below instead to bypass the certificate verification:**. Chạy lệnh ở sv1 (master node)
 
-````sh
+```sh
 curl --insecure -sfL https://rancher.local/v3/import/m6h2glbrrwwnffqsmxg5f5nnk8jsxrv6rdk4lpdzpt42wxsxb2hgmb_c-m-p5bm2cfb.yaml | kubectl apply -f -
 ```

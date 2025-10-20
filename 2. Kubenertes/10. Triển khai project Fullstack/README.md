@@ -15,7 +15,7 @@
 
 - Trên **sv5**
 
-````sh
+```sh
 # Install
 sudo apt update -y
 sudo apt install mariadb-server -y
@@ -31,7 +31,7 @@ show databases;
 
 - Chạy tất cả các file trong `./Fullstack-Ecommerce-Web/01-starter-files_db-scripts` để tạo db và thêm dữ liệu.
 
-````sh
+```sh
 show tables;
 ```
 
@@ -39,7 +39,7 @@ show tables;
 
 - Build image
 
-````sh
+```sh
 # cd vào thư mục FE
 cd 03-frontend_angular-ecommerce
 # Build image
@@ -146,7 +146,7 @@ spec:
 
 - Sửa file [application.properties](./Fullstack-Ecommerce-Web/02-backend_spring-boot-rest-api/src/main/resources/application.properties) trỏ đúng IP của mariadb cài ở phần 2 là 192.168.159.105:3306
 - Build image `haitc21/ecommerce-backend:v1`
-````sh
+```sh
 cd 02-backend_spring-boot-rest-api
 ocker build -t ecommerce-backend:v1 .
 ocker tag ecommerce-backend:v1 haitc21/ecommerce-backend:v1

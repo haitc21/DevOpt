@@ -5,7 +5,7 @@
 - Ví dụ: Công ty có 1 cụm k8s có 3 dự án A,B, C và mỗi dự án có 3 môi trường develop, stagging, production thì có thể chia thành các namspace: projaect-a-dev, proect-a-stagging, project-a-prod, projaect-b-dev...
 - Mặc định khi tạo cụm k8s thì sẽ có namespace mặc định là **default**
 
-````sh
+```sh
 kubectl get pod
 kubectl get pod --namespace default
 ```
@@ -21,13 +21,13 @@ kubectl get ns
 
 - Tạo namespace tên là project-1
 
-````sh
+```sh
 kubectl create ns project-1
 ```
 
 - Xóa namespace
 
-````sh
+```sh
 kubectl delete ns project-1
 ```
 
@@ -50,7 +50,7 @@ metadata:
 
 - Appluy cấu hình
 
-````sh
+```sh
 kubectl apply -f ns.yml
 ```
 
@@ -58,13 +58,13 @@ kubectl apply -f ns.yml
 
 - Xóa namespace
 
-````sh
+```sh
 kubectl delete -f ns.yml
 ```
 
 - Giới hạn tài nguyên trong namespace
 
-````sh
+```sh
 vi resourcequota.yml
 ```
 

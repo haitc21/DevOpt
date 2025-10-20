@@ -75,7 +75,7 @@ resource "aws_instance" "app_server" {
 - Trong `main.tf` có thể khai báo nhiều provider block tương ứng với cá provider khai báo trong required_providers của file `teraform.tf`.
 - Thong tin auth teraform sử dung cấu hình của AWS CLi nếu chưa cấu hình có thể sử dụng 2 biến môi trường `AWS_ACCESS_KEY_ID` và `AWS_SECRET_ACCESS_KEY`
 
-````sh
+```sh
 aws configure list
 ```
 
@@ -183,7 +183,7 @@ terraform init
 
 - Để kiểm tra syntax và đảm bảo các provider đã cài đặt thành công
 
-````sh
+```sh
 terraform validate
 ```
 
@@ -191,7 +191,7 @@ terraform validate
 
 - Xem excution plan trước khi apply
 
-````sh
+```sh
 terraform plan
 ```
 
@@ -216,7 +216,7 @@ terraform apply
   - Hiển thị chi tiết các thay đổi sắp thực hiện.
 - Ví dụ đầu ra:
 
-````sh
+```sh
 $ terraform apply
 data.aws_ami.ubuntu: Reading...
 data.aws_ami.ubuntu: Read complete after 1s [id=ami-0026a04369a3093cc]
@@ -323,13 +323,13 @@ Do you want to perform these actions?
 - Sau khi tạo infrastructure xong thì teraform sẽ lưu trọng thái vào file `terraform.tfstate`
 - Lấy danh sách resource và data source tỏng workspace hiện tại
 
-````sh
+```sh
  terraform state list
  ```
 
 - Xem chi tiết
 
- ````sh
+ ```sh
  terraform show
  ```
 
@@ -427,7 +427,7 @@ resource "aws_instance" "app_server" {
 - Cách này được Terraform recommend để cho code clean hơn.
 - Với khai báo trên thì nếu không set giá trị cho biến khi chạy `terraform plan`, `terraform apply` thì sẽ sử dụng giá trị detault. Còn nếu muons set giá trị khác thì dùng argument `-var <tên biến>=<giá trị>`:
 
-````sh
+```sh
 terraform plan -var instance_type=t2.large
 ```
 
@@ -447,7 +447,7 @@ output "instance_hostname" {
 
 - Sau khi apply có thể xem giá trị các `Output values`:
 
-````sh
+```sh
 terraform output
 ```
 
@@ -495,7 +495,7 @@ resource "aws_instance" "app_server" {
 
 - Chạy lại `terraform init` để tải module
 
-````sh
+```sh
 terraform init
 ```
 
@@ -520,26 +520,26 @@ project/
 
 - Build
 
-````sh
+```sh
 terraform fmt
 terraform validate
 ```
 
 - Plan
 
-````sh
+```sh
 terraform plan
 ```
 
 - Apply
 
-````sh
+```sh
 terraform apply
 ```
 
 - Kiểm tra state
 
-````sh
+```sh
 terraform state list
 ```
 
@@ -551,7 +551,7 @@ terraform state list
 - Ví trong `outputs.tf` có `instance_hostname` phụ thuộc reource `app_server` trong `main.tf` nên cũng comment cả file `outputs.tf`
 - Apply
 
-````sh
+```sh
 terraform apply
 ```
 
@@ -561,6 +561,6 @@ terraform apply
 
 - Xóa toàn bộ infrastructure
 
-````sh
+```sh
 terraform detroy
 ```

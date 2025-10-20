@@ -108,33 +108,33 @@ Chạy các lệnh sau trên sv1
 
 - Lấy danh sách Deployments
 
-````sh
+```sh
 kubectl get deployments -n car-serv
 kubectl get deploy -n car-serv
 ```
 
 - Danh sachs ReplicaSet
 
-````sh
+```sh
 kubectl get replicasets -n car-serv
 kubectl get rs -n car-serv
 ```
 
 - Edit config
 
-````sh
+```sh
 kubectl edit deployment/car-serv-deployment -n car-serv
 ```
 
 - Rollout status
 
-````sh
+```sh
 kubectl rollout status deployment/car-serv-deployment -n car-serv
 ```
 
 - Scale: Tăng/giảm số replica
 
-````sh
+```sh
 kubectl scale deployment/car-serv-deployment --replicas=4 -n car-serv
 ```
 
