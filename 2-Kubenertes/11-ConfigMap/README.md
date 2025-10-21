@@ -28,7 +28,7 @@ metadata:
   namespace: ecommerce
 data:
   application.properties: |
-    spring.datasource.url=jdbc:mysql://192.168.1.115:3306/full-stack-ecommerce #chú ý thay đổi địa chỉ IP của bạn 
+    spring.datasource.url=jdbc:mysql://192.168.159.105:3306/full-stack-ecommerce #chú ý thay đổi địa chỉ IP của bạn 
     spring.datasource.username=ecommerceapp
     spring.datasource.password=StrongPa55WorD
     spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
