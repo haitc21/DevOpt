@@ -7,7 +7,7 @@
 
 **Chỉnh sửa `Dockerfile`**
 
-- Ở dòng `ENTRYPOINT java -jar /run/spring-boot-ecommerce-0.0.1-SNAPSHOT.jar` chúng ta chưa chỉ định rõ file cấu hình khi chạy dự án. Cần sửa thành `ENTRYPOINT java -jar /run/spring-boot-ecommerce-0.0.1-SNAPSHOT.jar --spring-config-localation=/run/src/main/resources/application.properties`
+- Ở dòng `ENTRYPOINT java -jar /run/spring-boot-ecommerce-0.0.1-SNAPSHOT.jar` chúng ta chưa chỉ định rõ file cấu hình khi chạy dự án. Cần sửa thành `ENTRYPOINT java -jar /run/spring-boot-ecommerce-0.0.1-SNAPSHOT.jar --spring.config.location=/run/src/main/resources/application.properties`
 
 >Note: `/run/src/main/resources/application.properties` là thư mục trong ontainer
 
