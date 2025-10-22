@@ -38,7 +38,7 @@ kubectl top po -n ecommerce
 - Import
 
 ```yml
-piVersion: autoscaling/v1
+apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: ecommerce-backend-autoscaling
