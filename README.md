@@ -82,6 +82,7 @@
 #### 2.5. Công cụ quản lý
 
 - [Cài đặt Rancher](2-Kubenertes/5-Rancher/1-Cài_đặt_rancher.md)
+- [Rancher Cơ bản](2-Kubenertes/5-Rancher/2-Rancher_cơ_bản.md)
 
 #### 2.6. Dự án thực tế
 
