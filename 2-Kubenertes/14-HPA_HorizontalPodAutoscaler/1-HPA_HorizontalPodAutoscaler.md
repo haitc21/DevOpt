@@ -1,4 +1,4 @@
-# Horizontal Pod Autoscaling - HPA
+# Horizontal Pod Autoscaler - HPA
 
 ## 1. HPA
 
