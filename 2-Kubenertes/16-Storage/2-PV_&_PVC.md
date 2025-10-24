@@ -133,6 +133,9 @@ spec:
 ```
 
 - PVC đã **Bound**
+
+![](./images/6.png)
+
 - Thử tạo 1 file trong pod vừa tạo ở thư mục `/usr/share/nginx/html` đã được mount vào PV. Execute Sheel vào Pod  `nfs-nginx`
 
 ```sh
@@ -140,7 +143,7 @@ touch /usr/share/nginx/html/create_file_from_k8s.txt
 ls /usr/share/nginx/html/
 ```
 
-![](./images/6.png)
+![](./images/7.png)
 
 - Kiểm tra trên **sv5** xem đã mount đúng chưa
 
