@@ -25,6 +25,7 @@
 | PortworxVolume  | ✓                         | -                         | ✓                                 | -                      |
 
 - Reclaim Policy: Khi  PVC bị xóa hoặc unbound thì dữ liệu trong PV sẽ được xử lý như thế nào.
+
 | Reclaim Policy | Mô tả                                 | Hành động thực hiện                                                                                                                                                                                       |
 | -------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Retain**     | Giữ lại dữ liệu sau khi PVC bị xóa.   | PV vẫn tồn tại ở trạng thái *Released*, dữ liệu vẫn còn nguyên trên storage. Quản trị viên phải xóa thủ công dữ liệu hoặc PV.                                                                             |
@@ -34,12 +35,14 @@
 >⚠️ Lưu ý: Từ Kubernetes 1.34, chỉ còn nfs và hostPath volume types hỗ trợ chính sách Recycle. Các loại volume khác nên sử dụng Delete hoặc Retain.
 
 - PersistentVolume Phase (Trạng thái của PV)
-| Phase         | Mô tả                                                          | Ghi chú                                                                                                                   |
-| ------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| **Available** | PV đang **rảnh** (chưa được gán cho PVC nào).                  | PV sẵn sàng để được bind với một PersistentVolumeClaim (PVC).                                                             |
-| **Bound**     | PV đã được **gán (bind)** với một PVC.                         | PVC và PV đã liên kết 1-1. PV chỉ phục vụ cho PVC đó.                                                                     |
-| **Released**  | PVC đã bị **xóa**, nhưng PV **chưa được thu hồi** (reclaimed). | Dữ liệu vẫn còn trên storage backend. Hệ thống sẽ xử lý tùy theo **Reclaim Policy** (`Retain`, `Recycle`, hoặc `Delete`). |
-| **Failed**    | PV đã **gặp lỗi trong quá trình thu hồi**.                     | Có thể do lỗi hệ thống, quyền truy cập, hoặc backend storage không cho phép xóa. Cần kiểm tra log và xử lý thủ công.      |
+
+| Phase         | Ý nghĩa ngắn gọn                                  |
+| ------------- | ------------------------------------------------- |
+| **Available** | PV trống, sẵn sàng sử dụng                        |
+| **Bound**     | PV đang được sử dụng bởi một PVC                  |
+| **Released**  | PVC bị xóa, PV đang chờ xử lý theo Reclaim Policy |
+| **Failed**    | PV gặp lỗi trong quá trình xử lý reclaim          |
+
 
 ## 2. Thực hành
 
