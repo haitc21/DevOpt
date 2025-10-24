@@ -121,4 +121,6 @@
 - [Storage Class](2-Kubenertes/16-Storage/1-Storage_Class.md)
 - [PV & PVC - Persistent Volume & Persistent Volume Claim](2-Kubenertes/16-Storage/2-PV_&_PVC.md)
 
+#### 2.16 StatefullSets
 
+- [](./2-Kubenertes/17-16-StatefulSets/1-StatefulSets.md)
