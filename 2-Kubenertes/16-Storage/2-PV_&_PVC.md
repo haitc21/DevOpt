@@ -43,7 +43,6 @@
 | **Released**  | PVC bị xóa, PV đang chờ xử lý theo Reclaim Policy |
 | **Failed**    | PV gặp lỗi trong quá trình xử lý reclaim          |
 
-
 ## 2. Thực hành
 
 - Cài NFS Server trên **sv5**
@@ -110,7 +109,7 @@ spec:
 
 - Vào trong chi tiết PVC vừa tạo phần **Recent Event**
 
-~[](./images/4.png)
+![](./images/4.png)
 
 - tạo Pod test thử PVC
 
