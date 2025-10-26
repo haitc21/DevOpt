@@ -121,8 +121,12 @@
 - [Storage Class](2-Kubenertes/16-Storage/1-Storage_Class.md)
 - [PV & PVC - Persistent Volume & Persistent Volume Claim](2-Kubenertes/16-Storage/2-PV_&_PVC.md)
 
-#### 2.16 StatefullSets
+#### 2.17 StatefullSets
 
-- [StatefullSets](./2-Kubenertes/17-16-StatefulSets/1-StatefulSets.md)
-- [Triển khai MariaDB trên k8s](./2-Kubenertes/17-16-StatefulSets/2-Triển_khai_MariaDB.md)
-- [Triển khai Redis trên k8s](./2-Kubenertes/17-16-StatefulSets/3-Triển_khai_Reddis.md)
+- [StatefullSets](./2-Kubenertes/17-StatefulSets/1-StatefulSets.md)
+- [Triển khai MariaDB trên k8s](./2-Kubenertes/17-StatefulSets/2-Triển_khai_MariaDB.md)
+- [Triển khai Redis trên k8s](./2-Kubenertes/17-StatefulSets/3-Triển_khai_Reddis.md)
+
+#### 2.18 DaemonSet
+
+- [DảmonSet](./2-Kubenertes/18-DaemonSet/1-DaemonSet.md)
