@@ -130,3 +130,7 @@
 #### 2.18 DaemonSet
 
 - [DảmonSet](./2-Kubenertes/18-DaemonSet/1-DaemonSet.md)
+
+#### 2.19 Monitoring
+
+- [`Cài đặt Prometheus & Grafana (P&G Stack)`](./2-Kubenertes/19-Monitoring/1-Caì_đặt_Prometheus_Grafana.md)
