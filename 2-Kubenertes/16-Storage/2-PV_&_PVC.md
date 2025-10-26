@@ -51,8 +51,8 @@
 sudo apt update -y && sudo apt install nfs-server -y
 # Tạo thư mục lưu trữ
 mkdir /data
-chown -R nobody:nogroup /data
-chmod -R 777 /data
+sudo chown -R nobody:nogroup /data
+csudo hmod -R 777 /data
 # Thêm `/data *(rw,sync,no_subtree_check)` vào trong /etc/rxport
 sudo vi /etc/export
 sudo exportfs -rav

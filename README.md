@@ -123,4 +123,6 @@
 
 #### 2.16 StatefullSets
 
-- [](./2-Kubenertes/17-16-StatefulSets/1-StatefulSets.md)
+- [StatefullSets](./2-Kubenertes/17-16-StatefulSets/1-StatefulSets.md)
+- [Triển khai MariaDB trên k8s](./2-Kubenertes/17-16-StatefulSets/2-Triển_khai_MariaDB.md)
+- [Triển khai Redis trên k8s](./2-Kubenertes/17-16-StatefulSets/3-Triển_khai_Reddis.md)
