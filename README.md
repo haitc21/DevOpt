@@ -134,3 +134,9 @@
 #### 2.19 Monitoring
 
 - [`Cài đặt Prometheus & Grafana (P&G Stack)`](./2-Kubenertes/19-Monitoring/1-Caì_đặt_Prometheus_Grafana.md)
+- [Dashboard Grafana](./2-Kubenertes/19-Monitoring/2-Dashboards.md)
+- [Theo dỏi uptime của website](./2-Kubenertes/19-Monitoring/3-Khả_năng_uptime_của_web.md)
+
+#### 2.20 Backup & Restore
+
+- [Backup & Restore](./2-Kubenertes/20-Backup&Restore/1-Backup&Restore.md)
