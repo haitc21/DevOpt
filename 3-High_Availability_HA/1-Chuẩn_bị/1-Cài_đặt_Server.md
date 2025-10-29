@@ -11,3 +11,5 @@ Chuẩn bị:
 | sv3          | 192.168.159.103  | 20 GB      | 2           | 1                    | 2            | 4 GB           | NAT            |
 
 ---
+
+>Note: Tạo snapshot trên cả 3 sv sẽ rollback sau mỗi bài học.
