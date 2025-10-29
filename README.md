@@ -144,3 +144,13 @@
 #### 2.21 Networking
 
 - [networking](./2-Kubenertes/21-Networking/1-Networking.md)
+
+### 3. High Availability - HA
+
+#### 3.1 Chuản bị
+
+- [Cài đặt Server](./3-High_Availability_HA/1-Chuẩn_bị/1-Cài_đặt_Server.md)
+
+#### 3.2 Mongodb
+
+- [Mongodb Replica](./3-High_Availability_HA/2-MongoDB/1-MongoDB.md)
