@@ -57,93 +57,93 @@
 
 #### 2.1. Kiến trúc Kubernetes
 
-- [Kiến trúc Kubernetes](2-Kubenertes/1-Kiến_trúc_k8s/1-Kiến_trúc_k8s.md)
+- [Kiến trúc Kubernetes](./2-Kubenertes_cơ_bản/1-Cấu_trúc_file_k8s_yml/3-Cấu_trúc_file_k8s_yml.md)
 
 #### 2.2. Cài đặt Kubernetes
 
-- [Cài đặt Kubernetes On-prem](2-Kubenertes/2-Cài_đặt_k8s/1-On-prem.md)
+- [Cài đặt Kubernetes On-prem](2-Kubenertes_cơ_bản/2-Cài_đặt_k8s/1-On-prem.md)
 
 #### 2.3. Cấu trúc file Kubernetes YAML
 
-- [Cấu trúc file Kubernetes YAML](2-Kubenertes/1-Cấu_trúc_file_k8s_yml/3-Cấu_trúc_file_k8s_yml.md)
+- [Cấu trúc file Kubernetes YAML](2-Kubenertes_cơ_bản/1-Cấu_trúc_file_k8s_yml/3-Cấu_trúc_file_k8s_yml.md)
 
 #### 2.4. Namespace
 
-- [Namespace](2-Kubenertes/4-Namespace/1-Namespace.md)
+- [Namespace](2-Kubenertes_cơ_bản/4-Namespace/1-Namespace.md)
 
 #### 2.5. Rancher
 
-- [Cài đặt Rancher](2-Kubenertes/5-Rancher/1-Cài_đặt_rancher.md)
-- [Rancher cơ bản](2-Kubenertes/5-Rancher/2-Rancher_cơ_bản.md)
+- [Cài đặt Rancher](2-Kubenertes_cơ_bản/5-Rancher/1-Cài_đặt_rancher.md)
+- [Rancher cơ bản](2-Kubenertes_cơ_bản/5-Rancher/2-Rancher_cơ_bản.md)
 
 #### 2.6. Pods
 
-- [Pods](2-Kubenertes/6-Pods/1-Pods.md)
+- [Pods](2-Kubenertes_cơ_bản/6-Pods/1-Pods.md)
 
 #### 2.7. Deployment
 
-- [Deployment](2-Kubenertes/7-Deployment/1-Deployment.md)
+- [Deployment](2-Kubenertes_cơ_bản/7-Deployment/1-Deployment.md)
 
 #### 2.8. Service
 
-- [Service](2-Kubenertes/8-Service/1-Service.md)
+- [Service](2-Kubenertes_cơ_bản/8-Service/1-Service.md)
 
 #### 2.9. Ingress
 
-- [Ingress](2-Kubenertes/9-ingress/1-ingress.md)
+- [Ingress](./2-Kubenertes_cơ_bản/9-ingress/)
 
 #### 2.10. Triển khai project Fullstack
 
-- [Triển khai project Fullstack](2-Kubenertes/10-Triển_khai_project_Fullstack/1-Triển_khai_project_Fullstack.md)
+- [Triển khai project Fullstack](2-Kubenertes_cơ_bản/10-Triển_khai_project_Fullstack/1-Triển_khai_project_Fullstack.md)
 
 #### 2.11. ConfigMap
 
-- [ConfigMap](2-Kubenertes/11-ConfigMap/1-ConfigMap.md)
+- [ConfigMap](2-Kubenertes_cơ_bản/11-ConfigMap/1-ConfigMap.md)
 
 #### 2.12. Secret
 
-- [Secret](2-Kubenertes/12-Secret/1-Secret.md)
+- [Secret](2-Kubenertes_cơ_bản/12-Secret/1-Secret.md)
 
 #### 2.13. Request & Limit
 
-- [Request & Limit](2-Kubenertes/13-Request_Limit/1-Request_Limit.md)
+- [Request & Limit](2-Kubenertes_cơ_bản/13-Request_Limit/1-Request_Limit.md)
 
 #### 2.14. HPA - Horizontal Pod Autoscaler
 
-- [HPA - Horizontal Pod Autoscaler](2-Kubenertes/14-HPA_HorizontalPodAutoscaler/1-HPA_HorizontalPodAutoscaler.md)
+- [HPA - Horizontal Pod Autoscaler](2-Kubenertes_cơ_bản/14-HPA_HorizontalPodAutoscaler/1-HPA_HorizontalPodAutoscaler.md)
 
 #### 2.15. RBAC - Bảo mật
 
-- [RBAC - Role Based Access Control](2-Kubenertes/15-RBAC/1-RBAC.md)
+- [RBAC - Role Based Access Control](2-Kubenertes_cơ_bản/15-RBAC/1-RBAC.md)
 
 #### 2.16. Storage
 
-- [Storage Class](2-Kubenertes/16-Storage/1-Storage_Class.md)
-- [PV & PVC - Persistent Volume & Persistent Volume Claim](2-Kubenertes/16-Storage/2-PV_&_PVC.md)
+- [Storage Class](2-Kubenertes_cơ_bản/16-Storage/1-Storage_Class.md)
+- [PV & PVC - Persistent Volume & Persistent Volume Claim](2-Kubenertes_cơ_bản/16-Storage/2-PV_&_PVC.md)
 
 #### 2.17 StatefullSets
 
-- [StatefullSets](./2-Kubenertes/17-StatefulSets/1-StatefulSets.md)
-- [Triển khai MariaDB trên k8s](./2-Kubenertes/17-StatefulSets/2-Triển_khai_MariaDB.md)
-- [Triển khai Redis trên k8s](./2-Kubenertes/17-StatefulSets/3-Triển_khai_Reddis.md)
+- [StatefullSets](./2-Kubenertes_cơ_bản/17-StatefulSets/1-StatefulSets.md)
+- [Triển khai MariaDB trên k8s](./2-Kubenertes_cơ_bản/17-StatefulSets/2-Triển_khai_MariaDB.md)
+- [Triển khai Redis trên k8s](./2-Kubenertes_cơ_bản/17-StatefulSets/3-Triển_khai_Reddis.md)
 
 #### 2.18 DaemonSet
 
-- [DảmonSet](./2-Kubenertes/18-DaemonSet/1-DaemonSet.md)
+- [DảmonSet](./2-Kubenertes_cơ_bản/18-DaemonSet/1-DaemonSet.md)
 
 #### 2.19 Monitoring
 
-- [`Cài đặt Prometheus & Grafana (P&G Stack)`](./2-Kubenertes/19-Monitoring/1-Caì_đặt_Prometheus_Grafana.md)
-- [Dashboard Grafana](./2-Kubenertes/19-Monitoring/2-Dashboards.md)
-- [Theo dỏi uptime của website](./2-Kubenertes/19-Monitoring/3-Khả_năng_uptime_của_web.md)
+- [`Cài đặt Prometheus & Grafana (P&G Stack)`](./2-Kubenertes_cơ_bản/19-Monitoring/1-Caì_đặt_Prometheus_Grafana.md)
+- [Dashboard Grafana](./2-Kubenertes_cơ_bản/19-Monitoring/2-Dashboards.md)
+- [Theo dỏi uptime của website](./2-Kubenertes_cơ_bản/19-Monitoring/3-Khả_năng_uptime_của_web.md)
 
 #### 2.20 Backup & Restore
 
-- [Backup & Restore](./2-Kubenertes/20-Backup&Restore/1-Backup&Restore.md)
+- [Backup & Restore](./2-Kubenertes_cơ_bản/20-Backup&Restore/1-Backup&Restore.md)
 
 #### 2.21 Networking
 
-- [networking](./2-Kubenertes/21-Networking/1-Networking.md)
+- [networking](./2-Kubenertes_cơ_bản/21-Networking/1-Networking.md)
 
 ### 3. High Availability - HA
 
@@ -154,3 +154,7 @@
 #### 3.2 Mongodb
 
 - [Mongodb Replica](./3-High_Availability_HA/2-MongoDB/1-MongoDB.md)
+
+#### 3.3 MariaDB
+
+- [MariaD Galera Cluster](./3-High_Availability_HA/3-MariaDB/1-MariaDB.md)
