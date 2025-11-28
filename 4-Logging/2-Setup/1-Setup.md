@@ -55,7 +55,7 @@ cd /project/SpringBoot-Reactjs-Ecommerce/Ecommerce-Backend/
 mvn clean install -DskipTests
 # Taọ thư mục lưu log
 mkdir /var/log/java
-java -jar target/ecom-proj-0.0.1-SNAPSHOT.jar > /var/log/ecom-backend.log
+nohup java -jar target/ecom-proj-0.0.1-SNAPSHOT.jar > /var/log/ecom-backend.log &
 # Xem log
 tail -f /var/log/ecom-backend.log
 ```
@@ -70,7 +70,7 @@ tail -f /var/log/ecom-backend.log
 sudo apt install docker.io -y
 cd Ecommerce-Frontend
 docker build -t ecommerce-fe:v1 .
-docker run --name=ecommerce-fe -dp 5173:80 ecommerce-fe:v1
+docker run --name ecommerce-fe -d -p 5173:80 --restart=always ecommerce-fe:v1
 # Xem log
 docker logs -f ecommerce-fe
 ```
@@ -107,7 +107,7 @@ vi /etc/elasticsearch/elasticsearch.yml
 
 ```yml
 cluster.name: elasticsearch-devopseduvn
-   0.0.0.0
+network.host: 0.0.0.0 
 http.port: 9200
 xpack.security.enabled: true
 xpack.monitoring.collection.enabled: true
